@@ -1,18 +1,41 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Depco.View.PaginaPrincipal">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Depco.View.PaginaPrincipal"
+             BackgroundColor="White"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}">
     <ContentPage.Content>
+        
         <Grid>
             <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
 
-            <StackLayout Padding="15" Margin="15" BackgroundColor="White" VerticalOptions="FillAndExpand">
-                <Label Text="Aquí va la cámara" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" TextColor="Black"/>
+            <StackLayout BackgroundColor="Green" Padding="30">
+            <Image Source="logowhite" HorizontalOptions="Center"/>
             </StackLayout>
 
-            
-            <Button Text="Abrir camara" BackgroundColor="Blue" TextColor="White" Grid.Row="1"/>
+            <StackLayout Padding="15" Margin="15" BackgroundColor="White" VerticalOptions="FillAndExpand" Grid.Row="1" BindingContext="{Binding camera}">
+                <Label Text="El día ha llegado" TextColor="#0067B7" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,20" FontSize="30"/>
+        
+                <ImageButton Source="camicon" BackgroundColor="Transparent" Command="{Binding OpenCameraCommand}"/>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Conteo" TextColor="#0067B7" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,20" FontSize="30"/>
+                    <Frame Grid.Column="1" CornerRadius="10" HeightRequest="20" BorderColor="#2F8BE0">
+                       <Label Text="{Binding AccionText}" TextColor="#0067B7" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Start" FontSize="20"/>
+                     
+                    </Frame>
+                </Grid>
+
+                <Button CornerRadius="15" Margin="0,30" Text="Registrar" BackgroundColor="#2F8BE0" TextColor="White" Grid.Row="2" Command="{Binding RegisterCommand}"/>
+            </StackLayout>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

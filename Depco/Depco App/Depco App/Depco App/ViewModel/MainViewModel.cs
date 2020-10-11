@@ -1,5 +1,6 @@
 ﻿using System;
 using Depco.Service;
+using DepcoApp.ViewModel;
 
 namespace Depco.ViewModel
 {
@@ -12,11 +13,14 @@ namespace Depco.ViewModel
 
         #region Properties
         public LoginViewModel login { get; set; }
+        public CameraViewModel camera { get; set; }
         #endregion
 
         #region Constructor
         public MainViewModel()
         {
+            //Singleton
+            instance = this;
             //Services
             dialogService = new DialogService();
             navigationService = new NavigationService();

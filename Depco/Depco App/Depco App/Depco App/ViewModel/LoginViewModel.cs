@@ -19,6 +19,8 @@ namespace Depco.ViewModel
         #region Constructor
         public LoginViewModel()
         {
+            //Singleton
+            instance = this;
             //Services
             dialogService = new DialogService();
             navigationService = new NavigationService();

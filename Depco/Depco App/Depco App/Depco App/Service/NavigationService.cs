@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Depco.View;
 using Depco.ViewModel;
 using Depco_App;
+using DepcoApp.ViewModel;
 using Xamarin.Forms;
 
 namespace Depco.Service
@@ -15,6 +16,7 @@ namespace Depco.Service
             switch (pageName)
             {
                 case "Login":
+                    mainViewModel.camera = new CameraViewModel();
                     Application.Current.MainPage = new PaginaPrincipal();
                     break;
                 default:

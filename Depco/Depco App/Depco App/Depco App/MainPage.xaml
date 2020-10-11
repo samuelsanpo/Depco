@@ -1,24 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Depco_App.MainPage">
+             x:Class="Depco_App.MainPage"
+             BackgroundColor="White"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}">
 
-    <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-        </Frame>
-        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Learn more at "/>
-                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
+    <StackLayout Padding="20,10,20,30" VerticalOptions="Center" BindingContext="{Binding login}">
+        <Image Source="logoapp" HorizontalOptions="Center" Margin="30,0,0,0"/>
+        <Label Text="Deportes contra el hambre" HorizontalOptions="Center" FontAttributes="Bold" FontSize="15" TextColor="#0067B7"/>
+
+        <Label Text="Inicia sesión" TextColor="#0067B7" FontAttributes="Bold" HorizontalOptions="Center" Margin="0,20" FontSize="30"/>
+        
+        <Label Text="Usuario" Margin="40,0" TextColor="#0067B7" HorizontalOptions="Start" FontSize="17"/>
+        <Grid>
+            <Image Source="cajauser" HorizontalOptions="FillAndExpand"/>
+            <Entry HorizontalOptions="CenterAndExpand" Margin="50,5" Placeholder="Ingresa usuario..." TextColor="Black"
+                   PlaceholderColor="Gray"/>
+        </Grid>
+
+        <Label Text="Contraseña" Margin="40,0" TextColor="#0067B7" HorizontalOptions="Start" FontSize="17"/>
+        <Grid>
+            <Image Source="cajacontra" HorizontalOptions="FillAndExpand"/>
+            <Entry HorizontalOptions="CenterAndExpand" Margin="50,5,30,5" Placeholder="Ingresa contraseña..." TextColor="Black"
+                   PlaceholderColor="Gray" IsPassword="True"/>
+        </Grid>
+
+        <Label Text="Aún no tienes cuenta?" FontSize="17" TextColor="Black" HorizontalOptions="End" Margin="20,0"/>
+        <Label Text="Registrate" TextDecorations="Underline" TextColor="#0067B7" HorizontalOptions="End" FontSize="17" Margin="20,0"/>
+
+        <ImageButton Source="botoniniciar" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" Margin="15,20" Command="{Binding LoginCommand}"/> 
+        <Label Text="Al usar nuestros servicios aceptas los terminos y condiciones de uso."
+               FontSize="17" TextColor="Black" HorizontalOptions="Center" Margin="30,0"/>
     </StackLayout>
 
 </ContentPage>
