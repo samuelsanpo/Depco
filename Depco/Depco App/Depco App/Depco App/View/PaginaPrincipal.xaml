@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Depco.View.PaginaPrincipal">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <StackLayout Padding="15" Margin="15" BackgroundColor="White" VerticalOptions="FillAndExpand">
+                <Label Text="Aquí va la cámara" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" TextColor="Black"/>
+            </StackLayout>
+
+            
+            <Button Text="Abrir camara" BackgroundColor="Blue" TextColor="White" Grid.Row="1"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
